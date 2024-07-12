@@ -34,28 +34,43 @@ PROGRAMS = {
     "GanaT_Dolares": {
         "path": r"C:\GanaT_Dolares\GanaT.exe"
     },
+    "GanaT": {
+        "paths": [
+            r"C:\%USERPROFILE%\Desktop\GanaT Bolivares.lnk",
+            r"C:\%USERPROFILE%\Desktop\GanaT Dolares.lnk",
+            r"C:\%USERPROFILE%\Desktop\GanaT Pesos.lnk",
+        ]
+    },
     "Accesos_Directos": {
         "paths": [
-            r"C:\%USERPROFILE%\Desktop\KingDeportes.ink",
-            r"C:\%USERPROFILE%\Desktop\PagoListo.ink",
-            r"C:\%USERPROFILE%\Desktop\Bemovil.ink",
-            r"C:\%USERPROFILE%\Desktop\MisMarcadores.ink",
-            r"C:\%USERPROFILE%\Desktop\SuperGana.ink",
-            r"C:\%USERPROFILE%\Desktop\Payall.ink",
-            r"C:\%USERPROFILE%\Desktop\Visitanos en Gana Loterias.ink"
+            r"C:\%USERPROFILE%\Desktop\KingDeportes.lnk",
+            r"C:\%USERPROFILE%\Desktop\PagoListo.lnk",
+            r"C:\%USERPROFILE%\Desktop\Bemovil.lnk",
+            r"C:\%USERPROFILE%\Desktop\MisMarcadores.lnk",
+            r"C:\%USERPROFILE%\Desktop\SuperGana.lnk",
+            r"C:\%USERPROFILE%\Desktop\Payall.lnk",
+            r"C:\%USERPROFILE%\Desktop\Visitanos en Gana Loterias.lnk"
+        ]
+    },
+    "Folders": {
+        "paths": [
+            r"C:\%USERPROFILE%\Desktop\VIDEOS TAQUILLA GANA TUTORIAL",
+            r"C:\%USERPROFILE%\Desktop\VIDEO KINGDEPORTES",
         ]
     }
 }
 
-def verificar_programas():
+def verificar_programas(programas):
     faltantes = []
-    for programa, info in PROGRAMS.items():
-        if "paths" in info:
-            for path in info["paths"]:
-                if not os.path.exists(os.path.expandvars(path)):
+    for programa in programas:
+        if programa in PROGRAMS:
+            info = PROGRAMS[programa]
+            if "paths" in info:
+                for path in info["paths"]:
+                    if not os.path.exists(os.path.expandvars(path)):
+                        faltantes.append(programa)
+                        break
+            else:
+                if not os.path.exists(info["path"]):
                     faltantes.append(programa)
-                    break
-        else:
-            if not os.path.exists(info["path"]):
-                faltantes.append(programa)
     return faltantes

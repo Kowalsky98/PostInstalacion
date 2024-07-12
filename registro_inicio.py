@@ -1,17 +1,19 @@
-# scripts/registro_inicio.py
-
 import os
-import sys
-import winreg as reg
+import shutil
 
-def add_to_startup():
-    script_path = os.path.abspath(sys.argv[0])
-    key = reg.HKEY_CURRENT_USER
-    key_value = "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
+def crear_acceso_directo():
+    # Ruta al archivo ejecutable o al acceso directo que deseas iniciar automáticamente
+    origen = r'C:\ruta\a\Main.exe'  # Actualiza con la ruta correcta
 
-    open_key = reg.OpenKey(key, key_value, 0, reg.KEY_ALL_ACCESS)
-    reg.SetValueEx(open_key, "Win_Apps_Installer", 0, reg.REG_SZ, script_path)
-    reg.CloseKey(open_key)
+    # Ruta de la carpeta de inicio del menú de inicio (Start Menu\Programs\Startup)
+    destino = os.path.join(os.getenv('APPDATA'), 'Microsoft', 'Windows', 'Start Menu', 'Programs', 'Startup')
+
+    # Crear el acceso directo en la carpeta de inicio del menú de inicio
+    try:
+        shutil.copy(origen, destino)
+        print(f"Acceso directo creado en: {destino}")
+    except Exception as e:
+        print(f"Error al crear el acceso directo: {e}")
 
 if __name__ == "__main__":
-    add_to_startup()
+    crear_acceso_directo()
