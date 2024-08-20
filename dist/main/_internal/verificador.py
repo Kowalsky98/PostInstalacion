@@ -43,7 +43,6 @@ PROGRAMS = {
     },
     "Accesos_Directos": {
         "paths": [
-            r"C:\%USERPROFILE%\Desktop\KingDeportes.lnk",
             r"C:\%USERPROFILE%\Desktop\PagoListo.lnk",
             r"C:\%USERPROFILE%\Desktop\Bemovil.lnk",
             r"C:\%USERPROFILE%\Desktop\MisMarcadores.lnk",
@@ -52,10 +51,9 @@ PROGRAMS = {
             r"C:\%USERPROFILE%\Desktop\Visitanos en Gana Loterias.lnk"
         ]
     },
-    "Folders": {
+    "KingDeportes": {
         "paths": [
-            r"C:\%USERPROFILE%\Desktop\VIDEOS TAQUILLA GANA TUTORIAL",
-            r"C:\%USERPROFILE%\Desktop\VIDEO KINGDEPORTES",
+            r"C:\%USERPROFILE%\Desktop\KingDeportes.lnk",
         ]
     }
 }

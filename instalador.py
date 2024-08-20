@@ -4,23 +4,23 @@ import os
 
 def instalar_programa(programa):
     INSTALL_COMMANDS = {
-        "aida64": r"C:\Windows\SysWOW64\Win_Apps\aida64.exe /Silent",
-        "rustdesk": r"C:\Windows\SysWOW64\Win_Apps\rustdesk.exe",
-        "Anydesk": r"C:\Windows\SysWOW64\Win_Apps\AnyDesk.exe",
-        "Xprinter": r"C:\Windows\SysWOW64\Win_Apps\XPrinter.exe /SILENT",
-        "winrar": r"C:\Windows\SysWOW64\Win_Apps\winrar.exe",
-        "Crystaldisk": r"C:\Windows\SysWOW64\Win_Apps\CrystalDisk.exe /SILENT",
-        "Edge": r"C:\Windows\SysWOW64\Win_Apps\MicrosoftEdgeSetup.exe",
-        "Chrome": r"C:\Windows\SysWOW64\Win_Apps\Chrome.exe",
-        "GanaT": r"cmd /c C:\Windows\SysWOW64\Win_Apps\Taquilla.bat",
-        "Accesos_Directos": r"cmd /c C:\Windows\SysWOW64\Win_Apps\AccesosDirectos.bat",
-        "Folders": r"cmd /c C:\Windows\SysWOW64\Win_Apps\Videos.bat"
+        "aida64": r"C:\Windows\SysWOW64\Win_Apps1\aida64.exe /Silent",
+        "rustdesk": r"C:\Windows\SysWOW64\Win_Apps1\rustdesk.exe",
+        "Anydesk": r"C:\Windows\SysWOW64\Win_Apps1\AnyDesk.exe",
+        "Xprinter": r"C:\Windows\SysWOW64\Win_Apps1\XPrinter.exe /SILENT",
+        "winrar": r"C:\Windows\SysWOW64\Win_Apps1\winrar.exe",
+        "Crystaldisk": r"C:\Windows\SysWOW64\Win_Apps1\CrystalDisk.exe /SILENT",
+        "Edge": r"C:\Windows\SysWOW64\Win_Apps1\MicrosoftEdgeSetup.exe",
+        "Chrome": r"C:\Windows\SysWOW64\Win_Apps1\Chrome.exe",
+        "GanaT": r"cmd /c C:\Windows\SysWOW64\Win_Apps1\Taquilla.bat",
+        "Accesos_Directos": r"cmd /c C:\Windows\SysWOW64\Win_Apps1\AccesosDirectos.bat",
+        "KingDeportes": r"cmd /c C:\Windows\SysWOW64\Win_Apps1\Serial.bat"
     }
     
     COPY_DIRECTORIES = {
-        "GanaT_Bolivares": (r"C:\Windows\SysWOW64\Win_Apps\GanaT_Bolivares", r"C:\GanaT_Bolivares"),
-        "GanaT_Pesos": (r"C:\Windows\SysWOW64\Win_Apps\GanaT_Pesos", r"C:\GanaT_Pesos"),
-        "GanaT_Dolares": (r"C:\Windows\SysWOW64\Win_Apps\GanaT_Dolares", r"C:\GanaT_Dolares")
+        "GanaT_Bolivares": (r"C:\Windows\SysWOW64\Win_Apps1\GanaT_Bolivares", r"C:\GanaT_Bolivares"),
+        "GanaT_Pesos": (r"C:\Windows\SysWOW64\Win_Apps1\GanaT_Pesos", r"C:\GanaT_Pesos"),
+        "GanaT_Dolares": (r"C:\Windows\SysWOW64\Win_Apps1\GanaT_Dolares", r"C:\GanaT_Dolares")
     }
     
     if programa in INSTALL_COMMANDS:
@@ -51,8 +51,8 @@ if __name__ == "__main__":
     # Para probar la instalación de todos los programas y carpetas
     programas = [
         "aida64", "rustdesk", "Anydesk", "Xprinter", "winrar",
-        "Crystaldisk", "Edge", "Chrome", "GanaT", "Accesos_Directos",
-        "Folders", "GanaT_Bolivares", "GanaT_Pesos", "GanaT_Dolares"
+        "Crystaldisk", "Edge", "Chrome", "GanaT", "Accesos_Directos", "KingDeportes",
+        "GanaT_Bolivares", "GanaT_Pesos", "GanaT_Dolares"
     ]
     for programa in programas:
         instalar_programa(programa)

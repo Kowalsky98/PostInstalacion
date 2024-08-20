@@ -4,8 +4,8 @@ from instalador import instalar_programa
 def main():
     programas = [
         "aida64", "rustdesk", "Anydesk", "Xprinter", "winrar", 
-        "Crystaldisk", "Edge", "Chrome", "Folders", "GanaT", 
-        "Accesos_Directos", "GanaT_Bolivares", "GanaT_Pesos", "GanaT_Dolares"
+        "Crystaldisk", "Edge", "Chrome", "GanaT", 
+        "Accesos_Directos", "KingDeportes" , "GanaT_Bolivares", "GanaT_Pesos", "GanaT_Dolares",
     ]
     faltantes = verificar_programas(programas)
     for programa in faltantes:
